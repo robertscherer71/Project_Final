@@ -1,0 +1,47 @@
+.nav-link{
+  margin-left: 20px; 
+}
+
+
+.contact-name {
+ width: 55px;
+ /*font-weight:bold;*/
+ text-align: right;
+
+}
+.contact-value {
+  border-bottom: 2px;
+  border-color: black;
+  border-bottom-style: solid;
+ margin-left: 10px;
+/* background-color: lightgray;*/
+
+}
+
+/* Style the close button */
+.delete, .edit, .details  {
+ 
+  padding: 3px 5px 3px 5px;
+}
+
+.delete:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+.details:hover {
+  background-color:rgb(73, 80, 117);
+  color: white;
+}
+
+
+.edit:hover {
+  background-color:rgb(41, 110, 56);
+  color: white;
+}
+
+
+
+
+

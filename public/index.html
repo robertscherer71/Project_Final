@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Robert Scherer Project</title>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+  </head>
+  <body>
+    
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <a class="navbar-brand" href="#">Contact Management</a>
+          <li class="nav-item">
+            <a id ='NavIndex' class="nav-link active" href="#"><i class="fa fa-list-ul" aria-hidden="true"></i> Index</a>
+          </li>
+          <li class="nav-item">
+            <a id = 'NavNew' class="nav-link" href="#"><i class="fa fa-plus" aria-hidden="true"></i> New</a>
+          </li>
+          <!--  https://www.w3schools.com/howto/howto_js_form_steps.asp , https://www.codeply.com/go/JVP2nxfv0p/bootstrap-4-form-examples
+          https://www.encodedna.com/javascript/how-to-create-a-simple-crud-application-using-only-javascript.htm -->
+        </ul>
+      </nav>
+
+      
+          <br>
+          <div   id="ContactsList" class="col-md-8 offset-md-2">
+              <span class="anchor" id="Contacts"></span>
+
+              <!-- form card login with validation feedback -->
+              <div class="card card-outline-secondary">
+                  <div class="card-header">
+                      <h3 class="mb-0">Contacts</h3>
+                  </div>
+                  <div class="card-body">
+                        <table class = "table" style ="word-break:break-all;" id="TableContacts">
+                               
+                                
+                       </table>
+                      
+                  </div>
+                  <!--/card-body-->
+              </div>
+              <!-- /form card login -->
+            
+          </div>
+
+           
+          <div style="display:none" id="formAddContact" class="col-md-6 offset-md-3">
+              <span class="anchor" ></span>
+
+              <!-- form card login with validation feedback -->
+              <div class="card card-outline-secondary" novalidate >
+                  <div class="card-header">
+                      <h3 id = 'ContactFormHeader' class="mb-0">New Contact</h3>
+                  </div>
+                  <div class="card-body">
+                      <div class="form" role="form"  id="NewContactForm"   >
+                          <div class="form-group">
+                              <label for="name">Name:</label>
+                              <input type="text"  placeholder="Enter Name" class="form-control" name="name" id="name" required="">
+                              <div class="invalid-feedback">Please enter your name</div>
+                          </div>
+                          <div class="form-group">
+                              <label>Email:</label>
+                              <input type="email" placeholder="Enter email"  class="form-control" name = "email" id="email" required="" >
+                              <div class="invalid-feedback">Please enter a valid email</div>
+                          </div>
+                          <div class="form-group" class="alert alert-danger" role="alert">
+                              <label>Phone:</label>
+                              <input type="phone" placeholder="Enter Phone Number"  class="form-control" name = "phone" id="phone" required="" >
+                              <div class="invalid-feedback">Please enter a valid phone number</div>
+                          </div>
+                          <hr>
+                          <div id= "inputNotifications" > </div>
+                          <button id= 'ContactFormSubmit' class="btn btn-success  float-right" >Submit</button>
+                        </div>
+                  </div>         <!--/card-body-->
+                </div>  <!-- /form card login -->
+            
+          </div>
+
+         
+          <div style="display:none" id = 'formConfirm' class="col-md-6 offset-md-3">
+              <span class="anchor" id="formLogin"></span>
+
+
+              <!-- form card login with validation feedback -->
+              <div class="card card-outline-secondary">
+                  <div class="card-header">
+                      <h3 class="mb-0">Contact Added</h3>
+                  </div>
+                  <div class="card-body">
+                      <div class="form" role="form"  id="NewContactForm"   >
+                          <div class="form-group">
+                              <label class = "contact-name" for="name">Name:</label>   
+                              <label id = "confirmName" class = "contact-value" for="name">A Name</label>
+                             
+                          </div>
+                          <div class="form-group">
+                              <label class = "contact-name">Email:</label> 
+                              <label id = "confirmEmail" class = "contact-value" for="email">email@mail.com</label>
+                          </div>
+                          <div class="form-group">
+                              <label class = "contact-name">Phone:</label> 
+                              <label id = "confirmPhone" class = "contact-value" for="phone">213 555 1234</label>
+                          </div>
+                          <hr>
+                          <button type="submit" class="btn btn-danger   float-right" id="btnDelete"><i class="fa fa-trash"></i> Delete</button>
+                          <button type="submit" class="btn btn-warning  mr-2 float-right" id="btnEdit"><i class="fa fa-edit"></i> Edit</button>
+                          <button type="submit" class="btn btn-success   mr-2  float-right" id="btnConfirm"><i class="fa fa-check"></i> OK</button>
+
+
+                        </div>
+                  </div>         <!--/card-body-->
+              </div>  <!-- /form card login -->
+            
+          </div>
+          <br>
+ 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.5.0/firebase-app.js"></script>
+
+    <!-- use firestore database -->
+    <script src="/__/firebase/7.5.0/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
